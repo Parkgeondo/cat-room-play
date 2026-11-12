@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>고양이 방 — Phase 0</title>
+    <script type="module" crossorigin src="./assets/index-CV5qWH-I.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DaKSmPal.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="panel">
+      <button id="togglePanel">디버그 ▾</button>
+      <div id="panelBody">
+        <div class="row">
+          <label for="timeScale">배속 <span id="timeScaleVal">×1.00</span></label>
+          <input type="range" id="timeScale" min="0.05" max="1" step="0.05" value="1" />
+        </div>
+        <div class="row buttons">
+          <button id="pause">⏸ 일시정지</button>
+          <button id="step">한 프레임 ▶</button>
+        </div>
+        <div class="row">
+          <label for="camMode">카메라</label>
+          <select id="camMode">
+            <option value="free">자유 (드래그로 회전)</option>
+            <option value="follow">따라가기</option>
+            <option value="side">옆에서 따라가기</option>
+          </select>
+        </div>
+        <div class="checks">
+          <label><input type="checkbox" id="chkAuto" checked /> 자동 산책</label>
+          <label><input type="checkbox" id="chkKeyed" checked /> 키프레임 걷기</label>
+          <label><input type="checkbox" id="chkTabby" checked /> 주황 고양이 모델</label>
+          <label><input type="checkbox" id="chkPrints" checked /> 발자국</label>
+          <label><input type="checkbox" id="chkLegColors" /> 다리 색 구분</label>
+          <label><input type="checkbox" id="chkTargets" /> 착지 목표</label>
+          <label><input type="checkbox" id="chkPath" checked /> 경로</label>
+          <label><input type="checkbox" id="chkBones" /> 뼈대</label>
+          <label><input type="checkbox" id="chkGhost" /> 몸 반투명</label>
+          <label><input type="checkbox" id="chkChart" checked /> 걸음 그래프</label>
+        </div>
+        <div id="stats"></div>
+        <div class="hint">바닥·상자·단상을 클릭(탭)하면 그곳으로 걸어가요.<br />스페이스: 일시정지 · →: 한 프레임</div>
+      </div>
+    </div>
+    <canvas id="gait" width="340" height="104"></canvas>
+  </body>
+</html>
